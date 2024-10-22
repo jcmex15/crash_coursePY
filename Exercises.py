@@ -157,3 +157,88 @@ def show_magicians(magicians):
 
 magicians = ["harry houdini", "harry poter", "sabrina spellman"]
 show_magicians(magicians)
+print("\n")
+
+"""
+8-10: Great Magicians
+Start with a copy of your program from Exercise 8-9. Write a function called make_great() 
+that modifies the list of magicians by adding the phrase the Great to each magician’s name.
+Call show_magicians() to see that the list has actually been modified.
+"""
+def show_magicians(magicians):
+    """Print the name of each magician in the list."""
+    for magician in magicians:
+        print(magician)
+
+def make_great(magicians):
+    """Add 'the Great!' to each magician's name."""
+    # Build a new list to hold the great musicians.
+    great_magicians = []
+
+    # Make each magician great, and add it to great_magicians.
+    while magicians:
+        magician = magicians.pop()
+        great_magician = magician + ' the Great'
+        great_magicians.append(great_magician)
+
+    # Add the great magicians back into magicians.
+    for great_magician in great_magicians:
+        magicians.append(great_magician)
+
+magicians = ['Harry Houdini', 'David Blaine', 'Teller']
+show_magicians(magicians)
+
+print("\n")
+make_great(magicians)
+show_magicians(magicians)
+print("\n")
+
+
+"""
+8-12: Sandwiches
+Write a function that accepts a list of items a person wants on a sandwich. The function should 
+have one parameter that collects as many items as the function call provides, and it should 
+print a summary of the sandiwch that is being ordered. Call the function three tiems, using a 
+different number of arguments each time
+"""
+
+def make_sandwich(*items):
+    for item in items:
+        print("......adding "+item+" to yopur sandwich")
+    print('your sandwich is ready')
+    print("\n")
+
+
+make_sandwich('roast beef', 'cheddar cheese', 'lettuce', 'honey dijon')
+
+make_sandwich('turkey', 'apple slices', 'honey mustard')
+make_sandwich('peanut butter', 'strawberry jam')
+
+"""
+8-14: Cars
+Write a function that stores information about a car in a dictionary. the function should 
+always receive a manufacturer and a model name. It should then accept an arbitrary number
+of keyword arguments. Call the function with the required information and two other name-value.
+pairs, such as a color or an optional feature. Your function should work for a call like this one:
+
+car = make_car('subaru', 'outback', color='blue', tow_package=True)
+
+Print the dictionary that’s returned to make sure all the information was stored correctly
+"""
+
+def make_car(manufacturer,model, **options):
+    #definir diccionario
+    car_dict={
+        'manufaturer': manufacturer.title(),
+        'model': model.title()
+    }
+    for option, value in options.items():
+        car_dict[option]=value
+
+    return car_dict
+
+print(make_car('subaru', 'outback', color='blue', tow_package=True))
+
+
+print(make_car('honda', 'accord', year=1991, color='white', headlights='popup'))
+print(make_car('honda', 'accord'))
