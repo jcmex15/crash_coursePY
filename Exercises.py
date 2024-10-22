@@ -94,7 +94,7 @@ def city_country(city, country):
     return f"{city.title()}, {country.title()}"
 
 
-print(city_country("santiago", "chile"))
+print(city_country("santiago", "chile"), "\n")
 
 """8-7: Album
 Write a function called make_album() that builds a dictionary 
@@ -110,3 +110,50 @@ to store the nubmer of tracks on an album. If the calling
 line includes a value for the number of tracks, add that 
 value to the album’s dictionary. Make at least one new 
 function call that includes the nubmer of tracks on an album."""
+
+
+# def make_album(artist, title, tracks=0):
+#     # create diccionary
+#     album_dict = {"artist": artist.title(), "title": title.title()}
+#     if tracks:  # si existen tracks, entonces
+#         album_dict["tracks"] = tracks
+#     return album_dict
+
+
+# # prepare the prompts
+# title_prompt = "\nWhat album are you thinking of? "
+# artist_prompt = "Who's the artist "
+
+# # Let the user know how to quit.
+
+# print("Enter 'quit' at any time to stop")
+
+# while True:
+#     title = input(title_prompt)
+#     if title == "quit":
+#         break
+
+#     artist = input(artist_prompt)
+#     if artist == "quit":
+#         break
+
+#     album = make_album(artist, title)
+#     print(album)
+
+# print("\nThanks for responding!")
+
+"""
+8-9: Magicians
+Make a list of magician’s names. Pass the list to a function 
+called show_magicians(), wich prints the name of each magician 
+in the list.
+"""
+
+
+def show_magicians(magicians):
+    for magician in magicians:
+        print(magician.title())
+
+
+magicians = ["harry houdini", "harry poter", "sabrina spellman"]
+show_magicians(magicians)
