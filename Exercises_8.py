@@ -165,10 +165,13 @@ Start with a copy of your program from Exercise 8-9. Write a function called mak
 that modifies the list of magicians by adding the phrase the Great to each magician’s name.
 Call show_magicians() to see that the list has actually been modified.
 """
+
+
 def show_magicians(magicians):
     """Print the name of each magician in the list."""
     for magician in magicians:
         print(magician)
+
 
 def make_great(magicians):
     """Add 'the Great!' to each magician's name."""
@@ -178,14 +181,15 @@ def make_great(magicians):
     # Make each magician great, and add it to great_magicians.
     while magicians:
         magician = magicians.pop()
-        great_magician = magician + ' the Great'
+        great_magician = magician + " the Great"
         great_magicians.append(great_magician)
 
     # Add the great magicians back into magicians.
     for great_magician in great_magicians:
         magicians.append(great_magician)
 
-magicians = ['Harry Houdini', 'David Blaine', 'Teller']
+
+magicians = ["Harry Houdini", "David Blaine", "Teller"]
 show_magicians(magicians)
 
 print("\n")
@@ -202,17 +206,18 @@ print a summary of the sandiwch that is being ordered. Call the function three t
 different number of arguments each time
 """
 
+
 def make_sandwich(*items):
     for item in items:
-        print("......adding "+item+" to yopur sandwich")
-    print('your sandwich is ready')
+        print("......adding " + item + " to yopur sandwich")
+    print("your sandwich is ready")
     print("\n")
 
 
-make_sandwich('roast beef', 'cheddar cheese', 'lettuce', 'honey dijon')
+make_sandwich("roast beef", "cheddar cheese", "lettuce", "honey dijon")
 
-make_sandwich('turkey', 'apple slices', 'honey mustard')
-make_sandwich('peanut butter', 'strawberry jam')
+make_sandwich("turkey", "apple slices", "honey mustard")
+make_sandwich("peanut butter", "strawberry jam")
 
 """
 8-14: Cars
@@ -226,19 +231,18 @@ car = make_car('subaru', 'outback', color='blue', tow_package=True)
 Print the dictionary that’s returned to make sure all the information was stored correctly
 """
 
-def make_car(manufacturer,model, **options):
-    #definir diccionario
-    car_dict={
-        'manufaturer': manufacturer.title(),
-        'model': model.title()
-    }
+
+def make_car(manufacturer, model, **options):
+    # definir diccionario
+    car_dict = {"manufaturer": manufacturer.title(), "model": model.title()}
     for option, value in options.items():
-        car_dict[option]=value
+        car_dict[option] = value
 
     return car_dict
 
-print(make_car('subaru', 'outback', color='blue', tow_package=True))
+
+print(make_car("subaru", "outback", color="blue", tow_package=True))
 
 
-print(make_car('honda', 'accord', year=1991, color='white', headlights='popup'))
-print(make_car('honda', 'accord'))
+print(make_car("honda", "accord", year=1991, color="white", headlights="popup"))
+print(make_car("honda", "accord"))
