@@ -1,3 +1,6 @@
+######################
+##  Ejemplo ###
+#####################
 class Dog:
     """A simple attempt to model a dog."""
 
@@ -21,3 +24,7 @@ print("My dog is " + str(my_dog.age) + " years old." + "\n")
 
 my_dog.sit()
 my_dog.roll_over()
+
+##############################################
+##### Working with Classes and Instances #####
+##############################################
