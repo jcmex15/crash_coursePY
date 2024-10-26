@@ -182,3 +182,111 @@ print("\n")
 #############################
 ##### Inheritance ###########
 #############################
+
+## The __init__() Method for a Child Class 
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+    def __init__(self, make, model, year):
+        """Initialize attributes of the parent class."""
+        super().__init__(make, model, year) # The 'super()' function is a special function 
+                                            # that helps Python make connections between
+                                            # the parent and child class
+
+my_tesla = ElectricCar('tesla', 'model s',2016)
+print(my_tesla.get_descriptive_name(),"\n")
+
+## Defining Attributes and Methods for the Child Class
+
+"""Let’s add an attribute that’s specific to electric cars (a battery, for
+    example)"""
+
+class ElectricCar(Car):
+    def __init__(self, make, model, year):
+        super().__init__(make, model, year)
+        self.battery_size = 70
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print("This car has a " + str(self.battery_size) + "-kWh battery.")
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.describe_battery()
+print("\n")
+
+## Overriding Methods from the Parent Class
+
+## Instances as Attributes
+
+class Battery():
+    """A simple attempt to model a battery for an electric car."""
+    
+    def __init__(self, battery_size=70):
+        """Initialize the battery's attributes."""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print("This car has a " + str(self.battery_size) + "-kWh battery.")
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        """
+        super().__init__(make, model, year)
+        self.battery = Battery()
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+print("\n")
+
+## Instances as Attributes 2
+
+class Battery():
+    """A simple attempt to model a battery for an electric car."""
+    
+    def __init__(self, battery_size=70):
+        """Initialize the battery's attributes."""
+        self.battery_size = battery_size
+
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print("This car has a " + str(self.battery_size) + "-kWh battery.")
+
+    def get_range(self):
+        """Print a statement about the range this battery provides."""
+        if self.battery_size == 70:
+            range = 240
+        elif self.battery_size == 85:
+            range = 270
+
+        message = "This car can go approximately " + str(range) + " miles on a full charge"
+        print(message)    
+
+class ElectricCar(Car):
+    """Represent aspects of a car, specific to electric vehicles."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        """
+        super().__init__(make, model, year)
+        self.battery = Battery()
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
+print("\n")
+
+
+###################################
+##### Importing Classes ###########
+###################################
