@@ -183,23 +183,29 @@ print("\n")
 ##### Inheritance ###########
 #############################
 
-## The __init__() Method for a Child Class 
+## The __init__() Method for a Child Class
+
 
 class ElectricCar(Car):
     """Represent aspects of a car, specific to electric vehicles."""
+
     def __init__(self, make, model, year):
         """Initialize attributes of the parent class."""
-        super().__init__(make, model, year) # The 'super()' function is a special function 
-                                            # that helps Python make connections between
-                                            # the parent and child class
+        super().__init__(
+            make, model, year
+        )  # The 'super()' function is a special function
+        # that helps Python make connections between
+        # the parent and child class
 
-my_tesla = ElectricCar('tesla', 'model s',2016)
-print(my_tesla.get_descriptive_name(),"\n")
+
+my_tesla = ElectricCar("tesla", "model s", 2016)
+print(my_tesla.get_descriptive_name(), "\n")
 
 ## Defining Attributes and Methods for the Child Class
 
 """Let’s add an attribute that’s specific to electric cars (a battery, for
     example)"""
+
 
 class ElectricCar(Car):
     def __init__(self, make, model, year):
@@ -210,7 +216,8 @@ class ElectricCar(Car):
         """Print a statement describing the battery size."""
         print("This car has a " + str(self.battery_size) + "-kWh battery.")
 
-my_tesla = ElectricCar('tesla', 'model s', 2016)
+
+my_tesla = ElectricCar("tesla", "model s", 2016)
 print(my_tesla.get_descriptive_name())
 my_tesla.describe_battery()
 print("\n")
@@ -219,9 +226,10 @@ print("\n")
 
 ## Instances as Attributes
 
-class Battery():
+
+class Battery:
     """A simple attempt to model a battery for an electric car."""
-    
+
     def __init__(self, battery_size=70):
         """Initialize the battery's attributes."""
         self.battery_size = battery_size
@@ -229,6 +237,7 @@ class Battery():
     def describe_battery(self):
         """Print a statement describing the battery size."""
         print("This car has a " + str(self.battery_size) + "-kWh battery.")
+
 
 class ElectricCar(Car):
     """Represent aspects of a car, specific to electric vehicles."""
@@ -241,16 +250,18 @@ class ElectricCar(Car):
         super().__init__(make, model, year)
         self.battery = Battery()
 
-my_tesla = ElectricCar('tesla', 'model s', 2016)
+
+my_tesla = ElectricCar("tesla", "model s", 2016)
 print(my_tesla.get_descriptive_name())
 my_tesla.battery.describe_battery()
 print("\n")
 
 ## Instances as Attributes 2
 
-class Battery():
+
+class Battery:
     """A simple attempt to model a battery for an electric car."""
-    
+
     def __init__(self, battery_size=70):
         """Initialize the battery's attributes."""
         self.battery_size = battery_size
@@ -266,8 +277,11 @@ class Battery():
         elif self.battery_size == 85:
             range = 270
 
-        message = "This car can go approximately " + str(range) + " miles on a full charge"
-        print(message)    
+        message = (
+            "This car can go approximately " + str(range) + " miles on a full charge"
+        )
+        print(message)
+
 
 class ElectricCar(Car):
     """Represent aspects of a car, specific to electric vehicles."""
@@ -280,7 +294,8 @@ class ElectricCar(Car):
         super().__init__(make, model, year)
         self.battery = Battery()
 
-my_tesla = ElectricCar('tesla', 'model s', 2016)
+
+my_tesla = ElectricCar("tesla", "model s", 2016)
 print(my_tesla.get_descriptive_name())
 my_tesla.battery.describe_battery()
 my_tesla.battery.get_range()
@@ -290,3 +305,20 @@ print("\n")
 ###################################
 ##### Importing Classes ###########
 ###################################
+
+"""Examples car,my_car, my_cars,my_electric_car"""
+
+## Importing a Single Class
+
+## Storing Multiple Classes in a Module
+
+## Importing Multiple Classes from a Module
+
+## Importing an Entire Module
+
+## Importing All Classes from a Module
+
+"""You can import every class from a module using the 
+following syntax:"""
+
+# "from module_name import *""
