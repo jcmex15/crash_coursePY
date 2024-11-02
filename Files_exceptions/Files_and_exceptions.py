@@ -22,3 +22,12 @@ with open("Files_exceptions/pi_digits.txt") as file_object:
 
 # file_path = 'C:\Users\ehmatthes\other_files\text_files\filename.txt'
 # with open(file_path) as file_object:
+
+##########################
+###### Writing to a File
+##########################
+
+# filename = 'programming.txt'
+
+# with open(filename, 'w') as file_object:
+#     file_object.write("I love programming.")
