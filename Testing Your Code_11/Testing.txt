@@ -11,3 +11,31 @@ tests covering all the possible ways you can use a function. Achieving full
 coverage on a large project can be daunting. It’s often good enough to write
 tests for your code’s critical behaviors and then aim for full coverage only if
 the project starts to see widespread use.
+
+Testing a Class
+
+In the first part of this chapter, you wrote tests for a single function. Now
+you’ll write tests for a class. You’ll use classes in many of your own programs,
+so it’s helpful to be able to prove that your classes work correctly. If
+you have passing tests for a class you’re working on, you can be confident
+that improvements you make to the class won’t accidentally break its current
+behavior.
+
+    A Variety of Assert Methods
+
+        Python provides a number of assert methods in the unittest.TestCase class.
+    As mentioned earlier, assert methods test whether a condition you believe is
+    true at a specific point in your code is indeed true. If the condition is true
+    as expected, your assumption about how that part of your program behaves
+    is confirmed; you can be confident that no errors exist. If the condition you
+    assume is true is actually not true, Python raises an exception.
+
+                
+            Method Use
+            assertEqual(a, b) Verify that a == b
+            assertNotEqual(a, b) Verify that a != b
+            assertTrue(x) Verify that x is True
+            assertFalse(x) Verify that x is False
+            assertIn(item, list) Verify that item is in list
+            assertNotIn(item, list) Verify that item is not in list
+            Table 11-1: Assert Methods Available from the unittest Module
